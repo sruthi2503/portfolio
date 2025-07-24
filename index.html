@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stylish Interactive Portfolio</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+      background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1920&q=80');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+    }
+    .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+      padding-top: 80px;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      z-index: 1000;
+      color: #fff;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      color: #f9f9f9;
+    }
+    nav a:hover {
+      color: #ffcc00;
+    }
+    .button {
+      padding: 0.6rem 1.2rem;
+      background-color: #ff3366;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+    .button:hover {
+      background-color: #cc0044;
+    }
+    section {
+      padding: 4rem 2rem;
+      min-height: 100vh;
+    }
+    h1, h2 {
+      color: #ffcc00;
+    }
+    #home img {
+      max-width: 300px;
+      border-radius: 50%;
+      border: 5px solid #ffcc00;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+    .project-btn {
+      margin: 1rem 0;
+      padding: 1rem;
+      background: #33ccff;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      width: 250px;
+    }
+    .project-btn:hover {
+      background: #00aaff;
+      color: #fff;
+    }
+    #contact p {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div><strong style="font-size: 1.5rem; color: #ffcc00;">My Portfolio</strong></div>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="button" onclick="toggleMode()" id="modeBtn">Dark Mode</button>
+  </nav>
+
+  <div class="overlay">
+    <!-- Home Section -->
+    <section id="home" style="text-align: center;">
+      <h1>Welcome to My Portfolio</h1>
+      <img src="https://picsum.photos/300" alt="Profile Image" />
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>My Projects</h2>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <button class="project-btn" onclick="showProject('Project One')">🚀 Project One</button>
+        <button class="project-btn" onclick="showProject('Project Two')">🧠 Project Two</button>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Information</h2>
+      <p><strong>Email:</strong> yourname@example.com</p>
+      <p><strong>Phone:</strong> +91 12345 67890</p>
+      <p><strong>Location:</strong> India</p>
+    </section>
+  </div>
+
+  <script>
+    let darkMode = false;
+
+    function toggleMode() {
+      darkMode = !darkMode;
+      document.body.classList.toggle('dark', darkMode);
+      document.getElementById('modeBtn').innerText = darkMode ? 'Light Mode' : 'Dark Mode';
+    }
+
+    function showProject(name) {
+      alert(`You clicked on ${name}. More details coming soon!`);
+    }
+  </script>
+</body>
+</html>
+
